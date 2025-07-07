@@ -4,7 +4,7 @@ const Toxicity = async (text)=>
 {
    try
    {
-    const API_KEY = 'AIzaSyBgTca0mDfoWk3flfSyjqlCWTfJhy4153U';
+    const API_KEY = import.meta.env.API_KEY;
     console.log(text)
      const req_body =
      {
