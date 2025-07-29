@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Piechart from "./PieChart";
+import Piechart from "../Components/Piechart";
 
 const Dashboard = () => {
     const [comments, setComments] = useState([]);
