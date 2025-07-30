@@ -53,7 +53,7 @@ const Home = () => {
         if (hasMore && !isFetching.current) {
             isFetching.current = true
             // we are checking if we move to bottom of the scroll bar then only send API
-            const res = await fetch(`http://localhost:3000/WeatherApp/AllTweets?page=${page}&limit=${limit}`, {
+            const res = await fetch(`https://twitterclone-node1.onrender.com/WeatherApp/AllTweets?page=${page}&limit=${limit}`, {
                 method: 'GET',
                 headers:
                 {
@@ -90,7 +90,7 @@ const Home = () => {
             const id = tweetContent.Tweet_ID;
             console.log(tweetContent.actionType)
 
-            const addComment = await fetch(`http://localhost:3000/WeatherApp/engage/${id}`, {
+            const addComment = await fetch(`https://twitterclone-node1.onrender.com/WeatherApp/engage/${id}`, {
                 method: 'POST',
                 headers:
                 {
@@ -189,7 +189,7 @@ const Home = () => {
         try {
             console.log(cur)
             console.log(toxic)
-            const commentadded = await fetch(`http://localhost:3000/WeatherApp/addComment/${id}`, {
+            const commentadded = await fetch(`https://twitterclone-node1.onrender.com/WeatherApp/addComment/${id}`, {
                 method: 'POST',
                 headers:
                 {
@@ -270,7 +270,7 @@ const Home = () => {
                     const filename = tweet.filename ? tweet.filename : null
                     return <div key={idx} className="bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-full flex flex-wrap items-center justify-start border-1 border-blue-200 rounded-lg mb-1">
                         <div className="w-13 h-full flex-col justify-start items-start">
-                            <div style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${tweet.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
+                            <div style={{ backgroundImage: `url(https://twitterclone-node1.onrender.com/WeatherApp/uploads/${tweet.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
                             </div>
                             <div className="w-15 h-30 flex justify-center items-start rounded-full bg-[#FFFFFF]">
                             </div>
