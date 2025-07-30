@@ -12,7 +12,7 @@ function App() {
   const [email,setEmail] = useState(null);
   const [loading,setLoading] = useState(false); 
   const current_user =  () => {
-    const user = fetch("http://localhost:3000/WeatherApp/currentuser",
+    const user = fetch("https://twitterclone-node1.onrender.com/WeatherApp/currentuser",
       {
         method: 'GET',
         credentials: 'include'
