@@ -6,13 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SideNav, Footer, RightSideNav } from './Components/Index'
 import { ToastContainer } from 'react-toastify';
 
+
 function App() {
   const dispatch = useDispatch();
   const nav = useNavigate();
   const [email,setEmail] = useState(null);
   const [loading,setLoading] = useState(false); 
+  const API_URL = import.meta.env.VITE_API_URL;
   const current_user =  () => {
-    const user = fetch("https://twitterclone-node1.onrender.com/WeatherApp/currentuser",
+    const user = fetch(`${API_URL}/WeatherApp/currentuser`,
       {
         method: 'GET',
         credentials: 'include'
