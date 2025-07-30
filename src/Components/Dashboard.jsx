@@ -4,12 +4,13 @@ import Piechart from "../Components/Piechart";
 const Dashboard = () => {
     const [comments, setComments] = useState([]);
     const [toxicCount, setToxicCount] = useState(0);
+    const API_URL = import.meta.env.VITE_API_URL;
     useEffect(() => {
         Comments();
     }, [])
 
     const Comments = async () => {
-        const getCommentsData = await fetch('http://localhost:3000/WeatherApp/AllComments', {
+        const getCommentsData = await fetch(`${API_URL}/WeatherApp/AllComments`, {
             method: 'GET',
             headers:
             {

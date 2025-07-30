@@ -14,13 +14,15 @@ const BookMarks = () => {
     const [toggle, setToggle] = useState(true);
     const [currentTweets,setCurrentTweets] = useState(bookmarks)
     const containerSize = isOpen ? 'h-140' : 'h-100';
+      const API_URL = import.meta.env.VITE_API_URL;
+
 
     useEffect(() => {
         showBookmarks();
         getTweets()
     }, [])
    function getTweets() {
-        const getTweets = fetch(`http://localhost:3000/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
+        const getTweets = fetch(`${API_URL}/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
             method: 'GET',
             credentials: 'include',
             headers:
@@ -42,7 +44,7 @@ const BookMarks = () => {
             })
     }
     const showBookmarks = async () => {
-        const bookmarks = await fetch(`http://localhost:3000/WeatherApp/bookmarks/${email}`, {
+        const bookmarks = await fetch(`${API_URL}/WeatherApp/bookmarks/${email}`, {
             method: 'GET',
             headers:
             {
@@ -95,7 +97,7 @@ const BookMarks = () => {
 
                         {index === idx && <div key={idx} className="bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-full flex flex-wrap items-center justify-start  rounded-lg mb-1">
                             <div className="w-13 h-full flex-col justify-start items-start">
-                                <div style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${bookmark.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
+                                <div style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${bookmark.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
                                 </div>
                                 <div className="w-15 h-30 flex justify-center items-start rounded-full bg-[#FFFFFF]">
                                 </div>
@@ -107,7 +109,7 @@ const BookMarks = () => {
                                     {bookmark.user_Tweeted}
                                 </div>
                                 <div className="text-[15px]  text-[#14171A]" style={{ fontWeight: 400, lineHeight: '1.5' }}>{bookmark.Content}</div>
-                                {bookmarks && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${bookmark.filename})`, height: '10rem' }} ></div>}
+                                {bookmarks && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${bookmark.filename})`, height: '10rem' }} ></div>}
 
                             </div>
                         </div>}

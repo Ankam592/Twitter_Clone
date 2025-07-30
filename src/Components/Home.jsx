@@ -259,7 +259,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="relative w-full h-14 flex justify-start items-center flex-wrap border-b border-1 border-blue-200 rounded-lg bg-[#FFFFFF]">
-                {usr && <div className="ml-5 h-10 w-10 flex flex-wrap rounded-full items-center  bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${usr.filename})` }} ></div>}
+                {usr && <div className="ml-5 h-10 w-10 flex flex-wrap rounded-full items-center  bg-cover" style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${usr.filename})` }} ></div>}
                 <p className="pl-5 font-bold">Whats happening?</p>
                 <Link to='/tweetPage'> <Button className='absolute bottom-2 right-2  h-10 w-20 text-[#FFFFFF] bg-[#1DA1F2]  rounded-full'>Tweet</Button>
                 </Link>
@@ -282,7 +282,7 @@ const Home = () => {
                                 {tweet.user_Tweeted}
                             </div>
                             <div className="text-[15px]  text-[#14171A]" style={{ fontWeight: 400, lineHeight: '1.5' }}>{tweet.Content}</div>
-                            {filename && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${tweet.filename})`, height: '10rem' }} ></div>}
+                            {filename && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${tweet.filename})`, height: '10rem' }} ></div>}
                             <div className="my-1 w-full h-10  flex justify-evenly items-center">
                                 {tweet.likes.includes(usr.email) ?
                                     <Button className="w-20 h-2/3  flex justify-center items-center border-1 rounded-lg transition-transform duration-400 ease-in-out scale-125 text-[#1DA1F2]" onClick={() => Engage({ 'actionType': 'deleteLike', 'Tweet_ID': tweet._id, 'email': usr.email })}><FaHeart className='text-red-500'></FaHeart></Button>

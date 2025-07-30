@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Api_getHook = ({email}) => {
+    const API_URL = import.meta.env.VITE_API_URL;
 
     try {
-        const data = fetch(`https://localhost:3000/WeatherApp/follow/${email}`,
+        const data = fetch(`${API_URL}/WeatherApp/follow/${email}`,
             {
                 method: 'GET',
                 headers: {

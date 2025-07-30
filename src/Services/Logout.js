@@ -8,10 +8,11 @@ export const Logout = () => {
     const nav = useNavigate();
     const dispatch = useDispatch();
     console.log("Hello Manoj")
+    const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         (  async ()=>{
-        const logoutuser = await fetch('http://localhost:3000/WeatherApp/logoutUser', {
+        const logoutuser = await fetch(`${API_URL}/WeatherApp/logoutUser`, {
             method: 'GET',
             credentials: 'include'
         })

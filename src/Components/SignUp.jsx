@@ -11,13 +11,14 @@ export const SignUp = () => {
     const dispatch = useDispatch();
     const nav = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const API_URL = import.meta.env.VITE_API_URL;
     const data = {};
 
     const signup = async (data) => {
         console.log(data);
         if (data) {
             try {
-                const res = await fetch("http://localhost:3000/WeatherApp/register", {
+                const res = await fetch(`${API_URL}/WeatherApp/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

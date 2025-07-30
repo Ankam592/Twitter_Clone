@@ -9,6 +9,7 @@ const Login = () => {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
     const dispatch = useDispatch();
+    const API_URL = import.meta.env.VITE_API_URL;
     const nav = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +22,7 @@ const Login = () => {
             Password: Password
         }
         console.log(data)
-        const res = await fetch("http://localhost:3000/WeatherApp/login", {
+        const res = await fetch(`${API_URL}/WeatherApp/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

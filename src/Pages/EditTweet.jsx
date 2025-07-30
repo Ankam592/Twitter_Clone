@@ -3,14 +3,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import PostTweet from "../Components/PostTweet";
 
 
+
 const EditTweet = () => {
     const [tweet, setTweets] = useState(null);
     const { slug } = useParams();
     console.log(slug)
+     const API_URL = import.meta.env.VITE_API_URL;
     const nav = useNavigate();
     useEffect(() => {
         if (slug) {
-            const tweet = fetch(`http://localhost:3000/WeatherApp/getTweetbyId/${slug}`, {
+            const tweet = fetch(`${API_URL}/WeatherApp/getTweetbyId/${slug}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers:

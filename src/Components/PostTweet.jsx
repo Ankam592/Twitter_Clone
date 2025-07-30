@@ -14,6 +14,7 @@ const PostTweet = ({ tweet }) => {
     const [previewImage, setPreviewImage] = useState(null);
     const [error, setError] = useState(null);
     const [toxic, setToxicity] = useState(false);
+    const API_URL = import.meta.env.VITE_API_URL;
     const { register, formState: { errors }, handleSubmit, setValue, getValues } = useForm(
         {
             defaultValues:
@@ -46,7 +47,7 @@ const PostTweet = ({ tweet }) => {
             }
 
             console.log(formdata)
-            const posttweet = fetch(`http://localhost:3000/WeatherApp/editTweet/${tweet._id}`, {
+            const posttweet = fetch(`${API_URL}/WeatherApp/editTweet/${tweet._id}`, {
                 method: 'POST',
                 credentials: 'include',
                 body: formdata
@@ -98,7 +99,7 @@ const PostTweet = ({ tweet }) => {
                 formdata.append('content', data.content)
                 formdata.append('toxic', toxic);
                 setformData(formdata);
-                const posttweet = fetch('http://localhost:3000/WeatherApp/postTweet', {
+                const posttweet = fetch(`${API_URL}/WeatherApp/postTweet`, {
                     method: 'POST',
                     credentials: 'include',
                     body: formdata
@@ -183,7 +184,7 @@ const PostTweet = ({ tweet }) => {
                                 }
                                 else {
                                     if (tweet?.filename) {
-                                        setPreviewImage(`http://localhost:3000/WeatherApp/uploads/${tweet.filename}`)
+                                        setPreviewImage(`${API_URL}/WeatherApp/uploads/${tweet.filename}`)
                                     }
                                 }
                             }}

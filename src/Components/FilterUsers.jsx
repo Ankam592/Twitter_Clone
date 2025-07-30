@@ -21,9 +21,11 @@ const FilterUsers = () => {
     const [showTweets, setShowTweets] = useState(false);
     const [tweets, setTweets] = useState(null);
     const [show, setShow] = useState(true);
+      const API_URL = import.meta.env.VITE_API_URL;
+
     const height_change = showFollowers || showFollowing || showTweets ? 'h-[490px]' : 'h-[400px]';
     useEffect(() => {
-        const getUsers = fetch(`http://localhost:3000/WeatherApp/searchUser/${input}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
+        const getUsers = fetch(`${API_URL}/WeatherApp/searchUser/${input}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
             method: 'GET',
             credentials: 'include',
             headers:
@@ -49,7 +51,7 @@ const FilterUsers = () => {
 
     const Follow = async (email) => {       // this is to send api when user clicks on follow button in person profile
         try {
-            const data = await fetch(`http://localhost:3000/WeatherApp/follow/${email}`,
+            const data = await fetch(`${API_URL}/WeatherApp/follow/${email}`,
                 {
                     method: 'GET',
                     headers: {
@@ -85,7 +87,7 @@ const FilterUsers = () => {
     }
     const UnFollow = async (email) => {       // this is to send api when user clicks on follow button in person profile
         try {
-            const data = await fetch(`http://localhost:3000/WeatherApp/unfollow/${email}`,
+            const data = await fetch(`${API_URL}/WeatherApp/unfollow/${email}`,
                 {
                     method: 'GET',
                     headers: {
@@ -154,7 +156,7 @@ const FilterUsers = () => {
         }, 500)
     }
     function getTweets(email) {
-        const getTweets = fetch(`http://localhost:3000/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
+        const getTweets = fetch(`${API_URL}/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
             method: 'GET',
             credentials: 'include',
             headers:
@@ -193,7 +195,7 @@ const FilterUsers = () => {
                     <div
                         className="w-25 h-25 rounded-full bg-cover bg-center"
                         style={{
-                            backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${users[index]?.filename})`, // sending here api directly to get image from files table using uploads/filename route (it is a middleware)
+                            backgroundImage: `url(${API_URL}/WeatherApp/uploads/${users[index]?.filename})`, // sending here api directly to get image from files table using uploads/filename route (it is a middleware)
                         }}
                     ></div>
                     <div className="text-xl font-semibold">

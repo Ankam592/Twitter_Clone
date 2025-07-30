@@ -14,10 +14,11 @@ export const Profile = () => {
     const [showTweets,setShowTweets] = useState(false)
     const [Tweets,setTweets] = useState(null);
     const height_change = showFollowers || showFollowing || showTweets ? 'h-120' : 'h-80'
+     const API_URL = import.meta.env.VITE_API_URL;
 
     const email_ = useSelector((state) => { return state.auth.userData?.email })
     const usrdata = (email_) => {
-        const userdata = fetch(`http://localhost:3000/WeatherApp//userProfile/${email_}`, {
+        const userdata = fetch(`${API_URL}/WeatherApp//userProfile/${email_}`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
@@ -51,7 +52,7 @@ export const Profile = () => {
         const filedata_ = new FormData();
         filedata_.append('image', val)
         filedata_.append('content', email_);
-        const file = fetch('http://localhost:3000/WeatherApp/profilePic', {
+        const file = fetch(`${API_URL}/WeatherApp/profilePic`, {
             method: 'POST',
             credentials: 'include',
             body: filedata_
@@ -78,7 +79,7 @@ export const Profile = () => {
         })
     }
       function getTweets(email) {
-        const getTweets = fetch(`http://localhost:3000/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
+        const getTweets = fetch(`${API_URL}/WeatherApp/getTweets/${email}`, {            // this is to get all the users which matches with the input sent then show one by one using carousel 
             method: 'GET',
             credentials: 'include',
             headers:
@@ -106,7 +107,7 @@ export const Profile = () => {
         <div className={`mt-6 w-160 ${height_change} mt-6 border-1 border-blue-200 rounded-lg flex flex-wrap justify-center items-start bg-[#FFFFFF]`}>
             <div className="w-full h-50 rounded-lg flex flex-wrap justify-start items-evenly ">
                 <div className="rounded-t-lg  w-full h-30 bg-[url('/bg.avif')] ">
-                   {profiledata ?  <div className=" bg-cover ml-5 mt-5 w-30 h-30  rounded-full" style={{backgroundImage : `url(http://localhost:3000/WeatherApp/uploads/${profiledata[0].filename})`}}></div> : <p>Loading</p>}
+                   {profiledata ?  <div className=" bg-cover ml-5 mt-5 w-30 h-30  rounded-full" style={{backgroundImage : `url(${API_URL}/WeatherApp/uploads/${profiledata[0].filename})`}}></div> : <p>Loading</p>}
                 </div>
                 <div className="relative mt-5 w-full h-8  flex justify-end items-center flex-wrap bg-[#FFFFFF]">
                     <div className="absolute left-1 w-1/4 text-sm h-full flex justify-center items-center">
