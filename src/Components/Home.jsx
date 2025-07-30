@@ -271,8 +271,8 @@ const Home = () => {
                     const filename = tweet.filename ? tweet.filename : null
                     return <div key={idx} className="bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-full flex flex-wrap items-center justify-start border-1 border-blue-200 rounded-lg mb-1">
                         <div className="w-13 h-full flex-col justify-start items-start">
-                            {/* <div style={{ backgroundImage: `url(https://twitterclone-node1.onrender.com/WeatherApp/uploads/${tweet.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
-                            </div> */}
+                            <div style={{ backgroundImage: `url(https://twitterclone-node1.onrender.com/WeatherApp/uploads/${tweet.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
+                            </div>
                             <div className="w-15 h-30 flex justify-center items-start rounded-full bg-[#FFFFFF]">
                             </div>
                             <div className="w-15 h-24 flex justify-center items-start rounded-full bg-[#FFFFFF]">
@@ -282,8 +282,8 @@ const Home = () => {
                             <div className="text-[14px]  font-semibold text-[#1DA1F2]">
                                 {tweet.user_Tweeted}
                             </div>
-                            {/* <div className="text-[15px]  text-[#14171A]" style={{ fontWeight: 400, lineHeight: '1.5' }}>{tweet.Content}</div>
-                            {filename && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${tweet.filename})`, height: '10rem' }} ></div>} */}
+                            <div className="text-[15px]  text-[#14171A]" style={{ fontWeight: 400, lineHeight: '1.5' }}>{tweet.Content}</div>
+                            {filename && <div className="h-30 w-19/20 bg-contain bg-center bg-cover" style={{ backgroundImage: `url(${API_URL}/WeatherApp/uploads/${tweet.filename})`, height: '10rem' }} ></div>}
                             <div className="my-1 w-full h-10  flex justify-evenly items-center">
                                 {tweet.likes.includes(usr.email) ?
                                     <Button className="w-20 h-2/3  flex justify-center items-center border-1 rounded-lg transition-transform duration-400 ease-in-out scale-125 text-[#1DA1F2]" onClick={() => Engage({ 'actionType': 'deleteLike', 'Tweet_ID': tweet._id, 'email': usr.email })}><FaHeart className='text-red-500'></FaHeart></Button>
