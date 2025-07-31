@@ -11,7 +11,7 @@ const InputText = ({
 {
     
    return (
-    <input type={type} className={className} placeholder={placeholder} {...Props} />
+    <input type={type} className={className}  {...Props} />
        
    )
 }

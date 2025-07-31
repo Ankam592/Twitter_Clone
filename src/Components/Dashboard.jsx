@@ -56,7 +56,7 @@ const Dashboard = () => {
                         </div>
                         {comments && comments.slice(0, 5).map((comment, idx) => {
 
-                            return <> <div className="w-full flex justify-evenly flex-wrap " key={idx}>
+                            return  <div className="w-full flex justify-evenly flex-wrap " key={idx}>
 
                                 <div className="pl-2 w-1/2 h-full ">
                                     {
@@ -74,7 +74,7 @@ const Dashboard = () => {
                                     }
                                 </div>
                             </div>
-                            </>
+                            
                         })}
 
                     </div>
