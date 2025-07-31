@@ -194,7 +194,7 @@ const PostTweet = ({ tweet }) => {
                         {errors.image ? <p>{errors.image.message}</p> : null}
                     </div>
                     {previewImage && <img src={previewImage} alt="preview"></img>}
-                    {/* <div className="w-1/4 h-full flex justify-evenly items-center bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${data.image[0]})` }}>  </div> */}
+                    <div className="w-1/4 h-full flex justify-evenly items-center bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${data.image[0]})` }}>  </div>
                 </div>
                 <div className="w-full h-1/4 flex justify-center items-center">
                     <Button className="w-1/3 h-1/2 rounded-lg bg-[#1DA1F2] text-[#FFFFFF] font-bold">Submit</Button>

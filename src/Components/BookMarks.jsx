@@ -77,7 +77,7 @@ const BookMarks = () => {
                 </div>
 
                 <div className="absolute top-4 right-4 ">
-                    {user && <div className="ml-5 h-10 w-10 flex flex-wrap rounded-full items-center  bg-cover" style={{ backgroundImage: `url(http://localhost:3000/WeatherApp/uploads/${user.filename})` }} ></div>}
+                    {user && <div className="ml-5 h-10 w-10 flex flex-wrap rounded-full items-center  bg-cover" style={{ backgroundImage: `url(${VITE_API_URL}/WeatherApp/uploads/${user.filename})` }} ></div>}
 
                 </div>
             </div>
