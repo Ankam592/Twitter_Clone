@@ -252,7 +252,7 @@ const Home = () => {
 
     }
     return (
-        <div className="w-170 h-100 flex-col justify-start items-center flex-wrap ">
+        <div className="w-full h-full flex-col justify-start items-center flex-wrap ">
             <div className="relative w-full h-14 flex justify-start items-center">
                 <h1 className="absolute top-4 left-4 h-10 font-bold ">Home</h1>
                 <div className="absolute top-4 right-4">

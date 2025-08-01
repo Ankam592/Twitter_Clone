@@ -48,7 +48,9 @@ function App() {
   return !loading ?  (
     
       <div className="flex">
+        <div className="hidden md:flex md:w-16 lg:w-64">
         <SideNav></SideNav>
+        </div>
         <div className='flex h-100 '>
           <div className='flex justify-center flex-wrap items-start w-170 h-full border-r border-blue-100 '>
             <h1>Loading</h1>
@@ -65,14 +67,16 @@ function App() {
     ) :
     (
     
-      <div className="flex flex-wrap h-screen">
+      <div className="flex  h-screen">
+        <div className="sm:hidden md:flex md:w-16 lg:w-64">
         <SideNav></SideNav>
-        <div className='flex h-140 flex-1 bg-[#F0F8FF]'>
+        </div>
+        <div className='flex h-140  bg-[#F0F8FF]'>
           <div className='flex justify-center items-start w-190 h-full '>
             <ToastContainer position='top-right' autoClose={3000}/>
             <Outlet />
           </div>
-          <div className='w-full h-full flex-1 ml-5'>
+          <div className='sm:hidden md:flex lg:w-full h-full flex-1 ml-5'>
             <RightSideNav></RightSideNav>
           </div>
 
