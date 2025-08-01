@@ -4,6 +4,7 @@ import { InputText, Button, Whisper } from "./Index";
 import { useNavigate, useParams } from "react-router-dom";
 import Toxicity from "../Hooks/Toxicity";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const PostTweet = ({ tweet }) => {
     const [formData, setformData] = useState(null);
@@ -15,6 +16,8 @@ const PostTweet = ({ tweet }) => {
     const [error, setError] = useState(null);
     const [toxic, setToxicity] = useState(false);
     const API_URL = import.meta.env.VITE_API_URL;
+    const email_ = useSelector((state) => { return state.auth.userData?.email })
+
     const { register, formState: { errors }, handleSubmit, setValue, getValues } = useForm(
         {
             defaultValues:
@@ -38,6 +41,7 @@ const PostTweet = ({ tweet }) => {
     const postTweet = (data) => {
         if (tweet) {
             const formdata = new FormData();
+            formdata.append('email', email_);
             formdata.append('content', data.content);
             formdata.append('toxic', toxic);
             if (data.image && data.image.length > 0) {
@@ -95,6 +99,7 @@ const PostTweet = ({ tweet }) => {
         else {
             if (data) {
                 const formdata = new FormData();
+                formdata.append('email', email_);
                 formdata.append('image', data.image[0])
                 formdata.append('content', data.content)
                 formdata.append('toxic', toxic);
