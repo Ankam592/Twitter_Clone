@@ -180,7 +180,7 @@ const FilterUsers = () => {
             })
     }
     return (
-        <div className={`mt-6 w-[600px] ${height_change} flex flex-col justify-between items-center border border-blue-200 rounded-md p-4 bg-[#FFFFFF]`}>
+        <div className={`mt-6 w-full ${height_change} flex flex-col justify-between items-center border border-blue-200 rounded-md p-4 bg-[#FFFFFF]`}>
             {users && users.length > 0 && show && (<> <div className="relative w-full h-3/4 flex justify-center items-center  border-b pb-5">
                 <div
                     className={`w-3/4 h-full absolute flex flex-col items-center gap-4 ${Animation}`}    // calling the animation state which is written in prev and next functions

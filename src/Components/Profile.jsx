@@ -104,7 +104,7 @@ export const Profile = () => {
     }
 
     return (
-        <div className={`mt-6 w-160 ${height_change} mt-6 border-1 border-blue-200 rounded-lg flex flex-wrap justify-center items-start bg-[#FFFFFF]`}>
+        <div className={`mt-6 w-full max-w-[600px] ${height_change}  border-1 border-blue-200 rounded-lg flex flex-wrap justify-center items-start bg-[#FFFFFF]`}>
             <div className="w-full h-50 rounded-lg flex flex-wrap justify-start items-evenly ">
                 <div className="rounded-t-lg  w-full h-30 bg-[url('/bg.avif')] ">
                    {profiledata ?  <div className=" bg-cover ml-5 mt-5 w-30 h-30  rounded-full" style={{backgroundImage : `url(${API_URL}/WeatherApp/uploads/${profiledata[0].filename})`}}></div> : <p>Loading</p>}

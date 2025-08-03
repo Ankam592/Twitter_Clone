@@ -75,7 +75,7 @@ const Login = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="mt-5 flex-col w-120 h-85 border-1 border-blue-400 rounded-lg bg-blue-200 justify-start flex-wrap items-center">
+            <div className=" flex-col w-full max-w-[550px] h-85 border-1 border-blue-400 rounded-lg bg-blue-200 justify-start flex-wrap items-center">
                 <div className="w-full h-15 flex justify-center bg-blue-200 text-[#1DA1F2] font-bold text-xl rounded-sm items-center">Login</div>
                 <p className="w-full text-[#1DA1F2] text-xs flex italic font-bold justify-center">Don't have an account, Please <Link className="underline" to="/signupPage"> &nbsp;SignUp</Link></p>
                 {Error && <p className="w-full  pt-5  text-[#F21202] text-xs flex italic justify-center " >{Error}</p>}

@@ -65,8 +65,8 @@ const SideNav = () => {
 
         ]
     return (
-        <div className="pt-2 bg-[#F0F8FF] flex-col h-full w-50  flex justify-start items-start   ">
-            <div className=" md:w-10 lg:w-50 h-10 flex justify-center "> <Logo></Logo></div>
+        <div className="pt-2 bg-[#F0F8FF] flex-col h-full w-full  flex justify-start items-start   ">
+            <div className=" sm:hidden md:flex md:w-10 lg:w-full h-10 flex justify-center "> <Logo></Logo></div>
             <div className="mt-4 w-50 h-90 flex flex-col justify-start items-center flex-wrap">
                 {nav_links.map((nav_ele) => {
                     const IconComponent = nav_ele.Icon;

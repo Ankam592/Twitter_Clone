@@ -154,7 +154,7 @@ const PostTweet = ({ tweet }) => {
     }
     return (
         <form onSubmit={handleSubmit(postTweet)}>
-            <div className="mt-15 w-170 h-100 border-1 border-blue-200 rounded-lg bg-[#FFFFFF] flex justify-evenly items-start flex-wrap">
+            <div className="mt-5 w-full h-100 max-w-[600px] border-1 border-blue-200 rounded-lg bg-[#FFFFFF] flex justify-evenly items-start flex-wrap">
                 <div className="w-full h-1/8 flex justify-center items-center">
                     <p className="font-bold">Tweet</p>
                 </div>

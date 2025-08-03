@@ -252,7 +252,7 @@ const Home = () => {
 
     }
     return (
-        <div className="w-full h-full flex-col justify-start items-center flex-wrap ">
+        <div className=" h-full w-full flex-col justify-start items-center flex-wrap ">
             <div className="relative w-full h-14 flex justify-start items-center">
                 <h1 className="absolute top-4 left-4 h-10 font-bold ">Home</h1>
                 <div className="absolute top-4 right-4">
@@ -266,10 +266,10 @@ const Home = () => {
                 </Link>
 
             </div>
-            <div ref={scrollRef} onScroll={(e) => hasScrolled(e)} className="pt-2 w-full h-94 overflow-y-auto">
+            <div ref={scrollRef} onScroll={(e) => hasScrolled(e)} className="pt-2 w-full h-100 overflow-y-auto">
                 {Alltweets && Alltweets.map((tweet, idx) => {
                     const filename = tweet.filename ? tweet.filename : null
-                    return <div key={idx} className="bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-full flex flex-wrap items-center justify-start border-1 border-blue-200 rounded-lg mb-1">
+                    return <div key={idx} className="         bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-auto flex flex-wrap items-center justify-start border-1 border-blue-200 rounded-lg mb-1">
                         <div className="w-13 h-full flex-col justify-start items-start">
                             <div style={{ backgroundImage: `url(https://twitterclone-node1.onrender.com/WeatherApp/uploads/${tweet.filename})` }} className="ml-2 w-8 h-8 flex justify-center items-start rounded-full bg-cover">
                             </div>

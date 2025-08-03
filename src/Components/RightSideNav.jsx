@@ -35,14 +35,14 @@ export const RightSideNav = () => {
         }
     ]
     return (
-        <div className="pt-5 w-60 h-full flex-col justify-center flex-wrap">
+        <div className="pt-5 w-full h-full flex-col justify-center flex-wrap items-center">
             {IsAuthenticated &&  <div className="mb-1 h-8 w-full flex justify-evenly items-center border-blue-200 rounded-sm">
                 <SearchBox type ='text' className='pl-1 w-full h-8 border-1 border-blue-300 rounded-sm bg-[#FFFFFF]' placeholder='Search By Name'></SearchBox>
                 
                 
             </div>}
             <div className="pl-2 font-bold rounded-t-lg w-full h-8 text-[#000000] bg-[#F0F8FF]  ">Trends for you</div>
-            <div className="w-full max-h-102 overflow-y-auto rounded-b-lg items-center bg-[#FFFFFF] border-1 border-blue-200 rounded-lg">
+            <div className="w-full max-h-106 overflow-y-auto rounded-b-lg items-center bg-[#FFFFFF] border-1 border-blue-200 rounded-lg">
             <TrendingCard   className="  w-full h-28 flex justify-start  flex-wrap  bg-white-800" Trending_Obj={TrendingItems}>
             </TrendingCard>
             </div>

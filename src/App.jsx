@@ -68,15 +68,16 @@ function App() {
     (
     
       <div className="flex  h-screen">
-        <div className="sm:hidden md:flex md:w-16 lg:w-64">
+        <div className="w-16 sm:w-16 md:w-64">
+         
         <SideNav></SideNav>
         </div>
-        <div className='flex h-140  bg-[#F0F8FF]'>
-          <div className='flex justify-center items-start w-190 h-full '>
+        <div className='flex-1 flex justify-evenly h-full  bg-[#F0F8FF] flex-wrap '>
+          <div className='flex justify-center items-center   sm:w-6/12 md:w-3/5 lg:w-3/4  max-w-[750px]  mx-auto h-full '>
             <ToastContainer position='top-right' autoClose={3000}/>
             <Outlet />
           </div>
-          <div className='sm:hidden md:flex lg:w-full h-full flex-1 ml-5'>
+          <div className='sm:flex sm:w-[200px]'>
             <RightSideNav></RightSideNav>
           </div>
 

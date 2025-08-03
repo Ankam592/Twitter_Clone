@@ -55,7 +55,7 @@ export const SignUp = () => {
 
     return (
         <form onSubmit={handleSubmit(signup)}>
-            <div className="mt-5 flex-col w-150 h-95 border-1 border-blue-400 rounded-lg bg-blue-200 justify-start flex-wrap items-center">
+            <div className="mt-5 flex-col w-full h-95 border-1 border-blue-400 rounded-lg bg-blue-200 justify-start flex-wrap items-center">
                 <div className="w-full h-20 flex justify-center bg-blue-200 text-[#1DA1F2] font-bold text-xl rounded-sm items-center">SignUp</div>
                 <p className="w-full text-[#1DA1F2] text-xs flex font-bold italic justify-center">Already had an account, Please <Link className="underline" to="/loginPage">&nbsp;Login</Link></p>
                 {Error && <p className="w-full text-[#F21202] text-xs flex italic justify-center" >{Error}</p>}
