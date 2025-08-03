@@ -65,7 +65,7 @@ const BookMarks = () => {
 
 
     return (
-        <div className={`mt-10 w-full min-h-100 max-w-[600px] flex-col justify-start items-center flex-wrap bg-[#FFFFFF] border-1 border-blue-200 rounded-lg`}>
+        <div className={`w-full min-h-100 max-w-[600px] flex-col justify-start items-center flex-wrap bg-[#FFFFFF] border-1 border-blue-200 rounded-lg`}>
             <div className="relative w-full h-14 flex justify-evenly items-center">
                 <h1 className={`ml-2 absolute top-4 left-15 h-10 font-bold `}>{toggle ? "My Tweets" : 'BookMarks' }</h1>
                 <div className="w-15 h-6 rounded-full border-2 border-blue-900 bg-[#FFFFFF] relative transition-all duration-500">

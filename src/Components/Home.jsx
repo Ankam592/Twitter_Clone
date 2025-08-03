@@ -266,7 +266,7 @@ const Home = () => {
                 </Link>
 
             </div>
-            <div ref={scrollRef} onScroll={(e) => hasScrolled(e)} className="pt-2 w-full h-100 overflow-y-auto">
+            <div ref={scrollRef} onScroll={(e) => hasScrolled(e)} className="   pt-2 w-full h-100 overflow-y-auto">
                 {Alltweets && Alltweets.map((tweet, idx) => {
                     const filename = tweet.filename ? tweet.filename : null
                     return <div key={idx} className="         bg-[#FFFFFF] shadow-sm hover:lg hover:-translate-y-1 duration-300  w-auto flex flex-wrap items-center justify-start border-1 border-blue-200 rounded-lg mb-1">

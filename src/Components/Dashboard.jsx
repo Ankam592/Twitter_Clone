@@ -35,7 +35,7 @@ const Dashboard = () => {
 
 
     return (
-        <div className=" m-3 w-full h-130 flex justify-center items-start flex-wrap">
+        <div className=" w-full h-full flex justify-center items-start flex-wrap">
             <div className="w-full h-7 m-3 flex justify-center items-center">
                 <h1 className="font-bold text-[20px]">Dashboard(Analysis of Toxic Comments)</h1>
             </div>
